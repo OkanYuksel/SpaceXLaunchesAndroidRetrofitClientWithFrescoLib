@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_centerInParent="true"
+    android:layout_centerHorizontal="true"
+    android:columnCount="3"
+    android:rowCount="3"
+    android:background="#ffffff">
+
+<ImageView
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:layout_column="2"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:scaleType="fitCenter"
+        android:background="@drawable/rocket_icon"
+        android:text="1" />
+
+</android.widget.RelativeLayout>
