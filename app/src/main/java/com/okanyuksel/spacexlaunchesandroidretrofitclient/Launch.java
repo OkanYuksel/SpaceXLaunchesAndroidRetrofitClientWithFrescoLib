@@ -6,6 +6,106 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Date;
 import java.util.List;
 
+
+public class Launch
+{
+    @SerializedName("flight_number")
+    @Expose
+    public Integer flight_number;
+
+    @SerializedName("mission_name")
+    @Expose
+    public String mission_name;
+
+    @SerializedName("mission_id")
+    @Expose
+    public List<Object> mission_id;
+
+    @SerializedName("upcoming")
+    @Expose
+    public Boolean upcoming;
+
+    @SerializedName("launch_year")
+    @Expose
+    public String launch_year;
+
+    @SerializedName("launch_date_unix")
+    @Expose
+    public Integer launch_date_unix;
+
+    @SerializedName("launch_date_utc")
+    @Expose
+    public Date launch_date_utc;
+
+    @SerializedName("launch_date_local")
+    @Expose
+    public Date launch_date_local;
+
+    @SerializedName("is_tentative")
+    @Expose
+    public Boolean is_tentative;
+
+    @SerializedName("tentative_max_precision")
+    @Expose
+    public String tentative_max_precision;
+
+    @SerializedName("tbd")
+    @Expose
+    public Boolean tbd;
+
+    @SerializedName("launch_window")
+    @Expose
+    public Integer launch_window;
+
+    @SerializedName("rocket")
+    @Expose
+    public Rocket rocket;
+
+    @SerializedName("ships")
+    @Expose
+    public List<Object> ships;
+
+    @SerializedName("telemetry")
+    @Expose
+    public Telemetry telemetry;
+
+    @SerializedName("reuse")
+    @Expose
+    public Reuse reuse;
+
+    @SerializedName("launch_site")
+    @Expose
+    public LaunchSite launch_site;
+
+    @SerializedName("launch_success")
+    @Expose
+    public Boolean launch_success;
+
+    @SerializedName("launch_failure_details")
+    @Expose
+    public LaunchFailureDetails launch_failure_details;
+
+    @SerializedName("links")
+    @Expose
+    public Links links;
+
+    @SerializedName("details")
+    @Expose
+    public String details;
+
+    @SerializedName("static_fire_date_utc")
+    @Expose
+    public Date static_fire_date_utc;
+
+    @SerializedName("static_fire_date_unix")
+    @Expose
+    public Integer static_fire_date_unix;
+
+    @SerializedName("timeline")
+    @Expose
+    public Timeline timeline;
+}
+
 class Base {
 
     @SerializedName("id")
@@ -370,103 +470,4 @@ class Base {
     @SerializedName("webcast_liftoff")
     @Expose
     public Integer webcast_liftoff;
-}
-
-public class Launch
-{
-    @SerializedName("flight_number")
-    @Expose
-    public Integer flight_number;
-
-    @SerializedName("mission_name")
-    @Expose
-    public String mission_name;
-
-    @SerializedName("mission_id")
-    @Expose
-    public List<Object> mission_id;
-
-    @SerializedName("upcoming")
-    @Expose
-    public Boolean upcoming;
-
-    @SerializedName("launch_year")
-    @Expose
-    public String launch_year;
-
-    @SerializedName("launch_date_unix")
-    @Expose
-    public Integer launch_date_unix;
-
-    @SerializedName("launch_date_utc")
-    @Expose
-    public Date launch_date_utc;
-
-    @SerializedName("launch_date_local")
-    @Expose
-    public Date launch_date_local;
-
-    @SerializedName("is_tentative")
-    @Expose
-    public Boolean is_tentative;
-
-    @SerializedName("tentative_max_precision")
-    @Expose
-    public String tentative_max_precision;
-
-    @SerializedName("tbd")
-    @Expose
-    public Boolean tbd;
-
-    @SerializedName("launch_window")
-    @Expose
-    public Integer launch_window;
-
-    @SerializedName("rocket")
-    @Expose
-    public Rocket rocket;
-
-    @SerializedName("ships")
-    @Expose
-    public List<Object> ships;
-
-    @SerializedName("telemetry")
-    @Expose
-    public Telemetry telemetry;
-
-    @SerializedName("reuse")
-    @Expose
-    public Reuse reuse;
-
-    @SerializedName("launch_site")
-    @Expose
-    public LaunchSite launch_site;
-
-    @SerializedName("launch_success")
-    @Expose
-    public Boolean launch_success;
-
-    @SerializedName("launch_failure_details")
-    @Expose
-    public LaunchFailureDetails launch_failure_details;
-
-    @SerializedName("links")
-    @Expose
-    public Links links;
-
-    @SerializedName("details")
-    @Expose
-    public String details;
-
-    @SerializedName("static_fire_date_utc")
-    @Expose
-    public Date static_fire_date_utc;
-
-    @SerializedName("static_fire_date_unix")
-    @Expose
-    public Integer static_fire_date_unix;
-
-    @SerializedName("timeline")
-    @Expose
-    public Timeline timeline;
 }

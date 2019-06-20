@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
         final RestInterface[] restInterface = new RestInterface[1];
         restInterface[0] = ApiClient.getClient("https://api.spacexdata.com/").create(RestInterface.class);
-        Call<List<Launch>> call = restInterface[0].getRepo();
+        Call<List<Launch>> call = restInterface[0].getLaunches();
         call.enqueue(new Callback<List<Launch>>() {
             @Override
             public void onResponse(Call<List<Launch>> call, Response<List<Launch>> response) {
