@@ -372,7 +372,7 @@ class Base {
     public Integer webcast_liftoff;
 }
 
-public class Repo
+public class Launch
 {
     @SerializedName("flight_number")
     @Expose

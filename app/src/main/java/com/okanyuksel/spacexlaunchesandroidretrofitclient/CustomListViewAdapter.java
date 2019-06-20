@@ -23,15 +23,15 @@ import java.net.URI;
 import java.net.URL;
 import java.util.ArrayList;
 
-public class CustomListViewAdapter extends ArrayAdapter<Repo> {
+public class CustomListViewAdapter extends ArrayAdapter<Launch> {
     private @Nullable  ResizeOptions mResizeOptions;
     private final LayoutInflater inflater;
     private final Context context;
     private ViewHolder holder;
-    private final ArrayList<Repo> launches;
+    private final ArrayList<Launch> launches;
 
 
-    public CustomListViewAdapter(Context context, ArrayList<Repo> launches) {
+    public CustomListViewAdapter(Context context, ArrayList<Launch> launches) {
         super(context,0, launches);
         this.context = context;
         this.launches = launches;
@@ -44,7 +44,7 @@ public class CustomListViewAdapter extends ArrayAdapter<Repo> {
     }
 
     @Override
-    public Repo getItem(int position) {
+    public Launch getItem(int position) {
         return launches.get(position);
     }
 
@@ -73,7 +73,7 @@ public class CustomListViewAdapter extends ArrayAdapter<Repo> {
             holder = (ViewHolder)convertView.getTag();
         }
 
-        Repo launch = launches.get(position);
+        Launch launch = launches.get(position);
         if(launch != null){
           /*  try {
                 Bitmap bitmap = BitmapFactory.decodeStream((InputStream)new URL(launch.links.mission_patch_small).getContent());
