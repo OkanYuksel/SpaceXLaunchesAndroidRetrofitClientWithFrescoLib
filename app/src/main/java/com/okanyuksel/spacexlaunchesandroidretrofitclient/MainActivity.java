@@ -19,7 +19,7 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
-    ArrayList<Repo> ListLaunches=new ArrayList<>();
+    ArrayList<Repo> listLaunches=new ArrayList<>();
     private ListView listView;
 
     @Override
@@ -33,33 +33,33 @@ public class MainActivity extends AppCompatActivity {
 
 
         final RestInterface[] restInterface = new RestInterface[1];
-        restInterface[0] =ApiClient.getClient().create(RestInterface.class);
+        restInterface[0] =ApiClient.getClient("https://api.spacexdata.com/").create(RestInterface.class);
         Call<List<Repo>> call= restInterface[0].getRepo();
         call.enqueue(new Callback<List<Repo>>() {
             @Override
             public void onResponse(Call<List<Repo>> call, Response<List<Repo>> response) {
-                ListLaunches.addAll(response.body());
-                for (int i=0;i<ListLaunches.size();i++){
+                listLaunches.addAll(response.body());
+                for (int i=0;i<listLaunches.size();i++){
                     System.out.println("******************************"+"\n");
-                    System.out.println(""+ListLaunches.get(i).mission_name+"\n");
-                    System.out.println(""+ListLaunches.get(i).launch_year+"\n");
-                    System.out.println(""+ListLaunches.get(i).details+"\n");
-                    System.out.println(""+ListLaunches.get(i).launch_success+"\n");
-                    if (ListLaunches.get(i).launch_success = false) {
-                        System.out.println(""+ListLaunches.get(i).launch_failure_details.reason+"\n");
+                    System.out.println(""+listLaunches.get(i).mission_name+"\n");
+                    System.out.println(""+listLaunches.get(i).launch_year+"\n");
+                    System.out.println(""+listLaunches.get(i).details+"\n");
+                    System.out.println(""+listLaunches.get(i).launch_success+"\n");
+                    if (listLaunches.get(i).launch_success = false) {
+                        System.out.println(""+listLaunches.get(i).launch_failure_details.reason+"\n");
                     }
-                    System.out.println(""+ListLaunches.get(i).launch_site.site_name_long+"\n");
-                    System.out.println(""+ListLaunches.get(i).rocket.rocket_id+"\n");
-                    System.out.println(""+ListLaunches.get(i).rocket.rocket_name+"\n");
-                    System.out.println(""+ListLaunches.get(i).rocket.rocket_type+"\n");
-                    System.out.println(""+ListLaunches.get(i).links.article_link+"\n");
-                    System.out.println(""+ListLaunches.get(i).links.mission_patch_small+"\n");
-                    System.out.println(""+ListLaunches.get(i).links.wikipedia+"\n");
-                    System.out.println(""+ListLaunches.get(i).links.video_link+"\n");
+                    System.out.println(""+listLaunches.get(i).launch_site.site_name_long+"\n");
+                    System.out.println(""+listLaunches.get(i).rocket.rocket_id+"\n");
+                    System.out.println(""+listLaunches.get(i).rocket.rocket_name+"\n");
+                    System.out.println(""+listLaunches.get(i).rocket.rocket_type+"\n");
+                    System.out.println(""+listLaunches.get(i).links.article_link+"\n");
+                    System.out.println(""+listLaunches.get(i).links.mission_patch_small+"\n");
+                    System.out.println(""+listLaunches.get(i).links.wikipedia+"\n");
+                    System.out.println(""+listLaunches.get(i).links.video_link+"\n");
                 }
 
-                if(ListLaunches.size()>0){
-                    listViewAdapter[0] = new CustomListViewAdapter(MainActivity.this,ListLaunches);
+                if(listLaunches.size()>0){
+                    listViewAdapter[0] = new CustomListViewAdapter(MainActivity.this,listLaunches);
                     listView.setAdapter(listViewAdapter[0]);
                 }
 
@@ -67,10 +67,10 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         AlertDialog.Builder builder = DialogHelper.alertBuilder(MainActivity.this);
-                        builder.setTitle(ListLaunches.get(position).mission_name);
-                        String strMessage = "Launched Rocket: " + ListLaunches.get(position).rocket.rocket_name + "\n" + "Rocket Type: " + ListLaunches.get(position).rocket.rocket_type ;
-                        if (ListLaunches.get(position).details!=null){
-                           strMessage += "\n" + "\n" + ListLaunches.get(position).details;
+                        builder.setTitle(listLaunches.get(position).mission_name);
+                        String strMessage = "Launched Rocket: " + listLaunches.get(position).rocket.rocket_name + "\n" + "Rocket Type: " + listLaunches.get(position).rocket.rocket_type ;
+                        if (listLaunches.get(position).details!=null){
+                           strMessage += "\n" + "\n" + listLaunches.get(position).details;
                         }
                         builder.setMessage(strMessage);
                         builder.setPositiveButton("Close", null);

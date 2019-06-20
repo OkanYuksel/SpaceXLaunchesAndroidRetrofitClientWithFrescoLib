@@ -6,11 +6,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
     private static Retrofit retrofit=null;
-    private static String Base_Url= "https://api.spacexdata.com/";
-    public static Retrofit getClient(){
+
+    public static Retrofit getClient(String baseURL){
         if(retrofit== null){
             retrofit = new Retrofit.Builder()
-                    .baseUrl(Base_Url)
+                    .baseUrl(baseURL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .client(new OkHttpClient())
                     .build();
